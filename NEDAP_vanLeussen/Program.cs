@@ -120,9 +120,24 @@ namespace SudokuSolver
                                             { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
                                             { '.', '.', '.', '.', '8', '.', '.', '7', '9' }};
 
-            Console.WriteLine((isValidSudoku(sudoku1) ? "The Sudoku 1 is valid" : "The Sudoku 1 is not valid"));
-            Console.WriteLine((isValidSudoku(sudoku2) ? "The Sudoku 2 is valid" : "The Sudoku 2 is not valid"));
+            Console.WriteLine("Sudoku Solution 1: \n");
+            PrintSudoku(sudoku1);
+            Console.WriteLine("Sudoku Solution 2: \n");
+            PrintSudoku(sudoku2);
+            Console.WriteLine((isValidSudoku(sudoku1) ? "The Sudoku Solution 1 is valid" : "The Sudoku Solution 1 is not valid"));
+            Console.WriteLine((isValidSudoku(sudoku2) ? "The Sudoku Solution 2 is valid" : "The Sudoku Solution 2 is not valid"));
             Console.ReadKey();
+        }
+
+        public static void PrintSudoku(char[,] sudoku)
+        {
+            for (int i = 1; i < 10; ++i)
+            {
+                for (int j = 1; j < 10; ++j)
+                Console.Write("|{0}", sudoku[i - 1, j - 1]);
+                Console.WriteLine("|");
+            }
+            Console.WriteLine("");
         }
     }
 }
