@@ -131,10 +131,10 @@ namespace SudokuSolver
 
         public static void PrintSudoku(char[,] sudoku)
         {
-            for (int i = 1; i < 10; ++i)
+            for (int i = 0; i < 9; ++i)
             {
-                for (int j = 1; j < 10; ++j)
-                Console.Write("|{0}", sudoku[i - 1, j - 1]);
+                for (int j = 0; j < 9; ++j)
+                Console.Write("|{0}", sudoku[i, j]);
                 Console.WriteLine("|");
             }
             Console.WriteLine("");
